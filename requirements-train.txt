@@ -1,0 +1,7 @@
+# Optional GPU training environment. This is not a historical environment lock file.
+# Install a PyTorch build appropriate for your CUDA/driver before these packages.
+torch
+transformers
+peft
+accelerate
+safetensors

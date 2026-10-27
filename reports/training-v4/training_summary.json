@@ -1,0 +1,11 @@
+{
+  "base_model": "/root/autodl-tmp/qwen/models/Qwen2.5-1.5B-Instruct",
+  "dataset": "datasets/ward-nlu-500-v1/distillation/v4/mixed-train-v4.1.0.jsonl",
+  "samples": 5000,
+  "epochs": 1,
+  "optimizer_updates": 313,
+  "elapsed_seconds": 683.4,
+  "max_gpu_memory_gb": 6.829,
+  "method": "offline teacher-response distillation with BF16 LoRA",
+  "resumed_from_adapter": null
+}

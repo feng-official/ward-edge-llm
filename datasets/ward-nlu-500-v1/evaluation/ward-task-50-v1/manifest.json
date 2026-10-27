@@ -1,0 +1,32 @@
+{
+  "dataset": "ward-task-50-v1",
+  "created_at": "2026-08-24T10:07:49.905877+00:00",
+  "rows": 50,
+  "scenarios": 25,
+  "task_distribution": {
+    "event_enhancement": 25,
+    "cloud_judgment": 25
+  },
+  "judgment_distribution": {
+    "confirm": 11,
+    "reject": 8,
+    "escalate": 6
+  },
+  "urgency_distribution": {
+    "紧急": 12,
+    "警告": 10,
+    "提醒": 3
+  },
+  "exact_prompt_overlap_with_existing_sets": 0,
+  "reference_sets_checked": [
+    "/root/autodl-tmp/smart-ward-master/datasets/ward-nlu-500-v1/qwen-sft-train-v1.0.0.jsonl",
+    "/root/autodl-tmp/smart-ward-master/datasets/ward-nlu-500-v1/qwen-sft-test-v1.0.0.jsonl",
+    "/root/autodl-tmp/smart-ward-master/datasets/ward-nlu-500-v1/distillation/student-train-v2.jsonl"
+  ],
+  "sha256": "18a526ab156153b50fcde74463d28f78150b3840545747ee5833c559d167187a",
+  "notes": [
+    "This is a newly authored deterministic holdout set.",
+    "It contains 25 scenario pairs: event enhancement plus cloud judgment.",
+    "It is not used for training or adapter selection."
+  ]
+}

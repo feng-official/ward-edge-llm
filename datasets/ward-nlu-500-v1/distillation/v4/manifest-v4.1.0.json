@@ -1,0 +1,45 @@
+{
+  "version": "ward-mixed-v4.0.0",
+  "seed": 20260822,
+  "rows": 5000,
+  "counts": {
+    "ward": 2000,
+    "math_gsm8k_train": 1500,
+    "code_mbpp_output": 1500
+  },
+  "task_counts": {
+    "code_output_replay": 1500,
+    "yolo_log_summary": 49,
+    "gsm8k_replay": 1500,
+    "event_enhancement": 511,
+    "nursing_advice": 240,
+    "cloud_judgment": 635,
+    "activity_broadcast": 254,
+    "periodic_summary": 57,
+    "offline_decision": 254
+  },
+  "sources": {
+    "ward": {
+      "path": "datasets/ward-nlu-500-v1/distillation/student-train-v2.jsonl",
+      "sha256": "80f6f0ac657732b53d0d4d4babd8ae3ce9b64a427943ca3643ea98d9a3d22446"
+    },
+    "gsm8k_train": {
+      "path": "datasets/ward-nlu-500-v1/distillation/v4-sources/gsm8k-train.jsonl",
+      "sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+    },
+    "mbpp": {
+      "path": "datasets/ward-nlu-500-v1/distillation/v4-sources/mbpp.jsonl",
+      "sha256": "ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f"
+    },
+    "held_out_benchmark": {
+      "path": "datasets/ward-nlu-500-v1/distillation/general-retention-v1/benchmark.jsonl",
+      "sha256": "890538935892216320d02e461c8c3c6ea65787c77fff16e3eccdb760e2b57e71"
+    }
+  },
+  "leakage_checks": {
+    "gsm8k_exact_question_overlap": 0,
+    "cruxeval_source_used_for_training": false,
+    "benchmark_rows_used_for_training": 0
+  },
+  "output_sha256": "c45d43ac069e11a4dd40a33ff75a6fd9e00858889cb3fd7733e79956c3f04872"
+}

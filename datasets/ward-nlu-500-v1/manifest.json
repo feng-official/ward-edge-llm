@@ -1,0 +1,33 @@
+{
+  "name": "ward-nlu-500",
+  "version": "1.0.0",
+  "seed": 20260809,
+  "total": 500,
+  "train": 400,
+  "test": 100,
+  "event_distribution": {
+    "fall_suspected": 50,
+    "seizure": 50,
+    "fall_prediction": 50,
+    "nurse_call": 40,
+    "bed_leave": 40,
+    "abnormal_posture": 40,
+    "long_still": 40,
+    "night_wandering": 35,
+    "door_departure": 35,
+    "bedsore_risk": 35,
+    "environment_anomaly": 30,
+    "device_fault": 30,
+    "node_offline": 25
+  },
+  "judgment_distribution": {
+    "confirm": 248,
+    "reject": 120,
+    "escalate": 132
+  },
+  "source_distribution": {
+    "manual": 500
+  },
+  "derived_sft_train": 800,
+  "derived_sft_test": 200
+}

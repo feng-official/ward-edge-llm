@@ -1,0 +1,43 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://smart-ward/contracts/envelope.json",
+  "title": "SmartWardMessageEnvelope",
+  "description": "智慧病房 MQTT 消息通用信封。所有消息外层必须符合此结构。",
+  "type": "object",
+  "required": ["message_id", "schema_version", "occurred_at", "source", "trace_id", "payload"],
+  "properties": {
+    "message_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "消息唯一 ID，消费端按此去重"
+    },
+    "event_id": {
+      "type": ["string", "null"],
+      "format": "uuid",
+      "description": "关联事件 ID；非事件消息（如 observation/health）为 null"
+    },
+    "schema_version": {
+      "type": "string",
+      "pattern": "^v[0-9]+$",
+      "description": "契约版本号，当前 v1"
+    },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "事件发生时间，UTC ISO 8601，Z 结尾，如 2026-07-21T08:30:00Z"
+    },
+    "source": {
+      "type": "string",
+      "description": "来源标识，如 edge:EDGE-W01-B01 / cloud / nurse-station"
+    },
+    "trace_id": {
+      "type": "string",
+      "description": "跨服务追踪 ID，便于日志关联"
+    },
+    "payload": {
+      "type": "object",
+      "description": "业务数据，结构见各消息 Schema"
+    }
+  },
+  "additionalProperties": false
+}

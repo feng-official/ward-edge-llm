@@ -1,0 +1,13 @@
+{
+  "prepared_date": "2026-10-27",
+  "scope": "Local package verification; no new model inference or training",
+  "offline_repository_checks_passed": 16,
+  "offline_repository_checks_total": 16,
+  "portable_runtime_unit_tests_passed": 4,
+  "portable_runtime_unit_tests_total": 4,
+  "http_transport_test": "Simulated response; request URL, model, payload and missing-auth handling checked without a real model endpoint",
+  "historical_general_scores_recomputed": true,
+  "historical_raw_journal_deduplicated_by_last_id": true,
+  "cloud_server_contacted": false,
+  "weights_included": false
+}

@@ -1,0 +1,164 @@
+{
+  "kind": "offline_repository_validation_not_model_inference",
+  "passed": true,
+  "checks": [
+    {
+      "name": "python_and_json_parse",
+      "passed": true,
+      "detail": {
+        "python_files": 19,
+        "json_jsonl_files": 45,
+        "errors": []
+      }
+    },
+    {
+      "name": "dataset_counts",
+      "passed": true,
+      "detail": {
+        "total": 500,
+        "train": 400,
+        "test": 100
+      }
+    },
+    {
+      "name": "event_distribution",
+      "passed": true,
+      "detail": {
+        "fall_suspected": 50,
+        "seizure": 50,
+        "fall_prediction": 50,
+        "nurse_call": 40,
+        "bed_leave": 40,
+        "abnormal_posture": 40,
+        "long_still": 40,
+        "night_wandering": 35,
+        "door_departure": 35,
+        "bedsore_risk": 35,
+        "environment_anomaly": 30,
+        "device_fault": 30,
+        "node_offline": 25
+      }
+    },
+    {
+      "name": "unique_ids_and_split_files",
+      "passed": true,
+      "detail": "Canonical source and split files must agree."
+    },
+    {
+      "name": "train_test_isolation",
+      "passed": true,
+      "detail": {
+        "id": 0,
+        "description": 0,
+        "scenario_family": 0
+      }
+    },
+    {
+      "name": "sft_count_and_shape",
+      "passed": true,
+      "detail": {
+        "train": 800,
+        "test": 200
+      }
+    },
+    {
+      "name": "mixed_training_count_and_hash",
+      "passed": true,
+      "detail": {
+        "rows": 5000,
+        "historical_manifest_hash_matches": true
+      }
+    },
+    {
+      "name": "exact_prompt_overlap",
+      "passed": true,
+      "detail": {
+        "sft_train_vs_test": 0,
+        "mixed_vs_sft_test": 0,
+        "ward50_vs_saved_train_test": 0
+      }
+    },
+    {
+      "name": "teacher_sources_exclude_heldout_ids",
+      "passed": true,
+      "detail": {
+        "overlap_count": 0
+      }
+    },
+    {
+      "name": "historical_metrics/domain-v4-q6-full.json",
+      "passed": true,
+      "detail": {
+        "cloud_judgment_accuracy": 0.99,
+        "cloud_judgment_macro_f1": 0.9913630229419703,
+        "event_urgency_accuracy": 0.82,
+        "format_valid_rate": 1.0
+      }
+    },
+    {
+      "name": "historical_metrics/results-v4-q6.json",
+      "passed": true,
+      "detail": {
+        "cloud_judgment_accuracy": 0.68,
+        "cloud_judgment_macro_f1": 0.6047254150702427,
+        "event_urgency_accuracy": 0.88,
+        "format_valid_rate": 1.0
+      }
+    },
+    {
+      "name": "historical_general_raw_metrics",
+      "passed": true,
+      "detail": {
+        "raw_journal_rows": 739,
+        "unique_questions": 600,
+        "latest_record_per_id_accuracy": {
+          "gsm8k": 0.6,
+          "cruxeval_o": 0.25,
+          "bbh": 0.35
+        }
+      }
+    },
+    {
+      "name": "training_log",
+      "passed": true,
+      "detail": {
+        "optimizer_updates": 313
+      }
+    },
+    {
+      "name": "seven_task_prompt_builder",
+      "passed": true,
+      "detail": {
+        "event_enhancement": true,
+        "nursing_advice": true,
+        "cloud_judgment": true,
+        "offline_decision": true,
+        "activity_broadcast": true,
+        "yolo_log_summary": true,
+        "periodic_summary": true
+      }
+    },
+    {
+      "name": "credential_pattern_scan",
+      "passed": true,
+      "detail": {
+        "findings": []
+      }
+    },
+    {
+      "name": "package_manifest_hashes",
+      "passed": true,
+      "detail": {
+        "files": 93,
+        "mismatches": [],
+        "inventory_difference": []
+      }
+    }
+  ],
+  "known_missing_assets": [
+    "final GGUF",
+    "LoRA weights",
+    "historical frozen benchmark.jsonl"
+  ],
+  "cloud_server_contacted": false
+}

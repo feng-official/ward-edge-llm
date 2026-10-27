@@ -1,0 +1,14 @@
+{
+  "event_type": "fall_suspected",
+  "description": "B07床旁检测到倒地姿态，摄像头与床垫信号一致",
+  "priority": "P1",
+  "context": {
+    "ward": "W-01",
+    "bed": "B07",
+    "confidence": 0.93,
+    "occurred_at": "2026-10-27T14:32:00+08:00",
+    "network_state": "disconnected",
+    "rule_hits": ["camera.posture=lying_floor", "bed_sensor.on_bed=false"],
+    "details": {"posture": "lying_floor", "on_bed": false, "observation_quality": "good"}
+  }
+}

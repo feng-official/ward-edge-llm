@@ -1,0 +1,55 @@
+{
+  "suite": "general-retention-v1",
+  "created_at": "2026-08-27T04:59:16Z",
+  "benchmark_sha256": "890538935892216320d02e461c8c3c6ea65787c77fff16e3eccdb760e2b57e71",
+  "baseline": {
+    "label": "teacher-14b-full",
+    "model": "qwen2.5-14b"
+  },
+  "distilled": {
+    "label": "v4-q6-full",
+    "model": "qwen2.5-1.5b-ward-v4-q6"
+  },
+  "threshold": 0.8,
+  "task_retention": {
+    "gsm8k": {
+      "description": "数学多步推理（GSM8K）",
+      "baseline_accuracy": 0.94,
+      "distilled_accuracy": 0.6,
+      "absolute_delta": -0.34,
+      "retention": 0.638298,
+      "retention_percent": 63.83,
+      "threshold": 0.8,
+      "passes_threshold": false
+    },
+    "cruxeval_o": {
+      "description": "代码理解与执行推理（CRUXEval-O）",
+      "baseline_accuracy": 0.525,
+      "distilled_accuracy": 0.25,
+      "absolute_delta": -0.275,
+      "retention": 0.47619,
+      "retention_percent": 47.62,
+      "threshold": 0.8,
+      "passes_threshold": false
+    },
+    "bbh": {
+      "description": "自然语言与逻辑推理（BIG-Bench Hard）",
+      "baseline_accuracy": 0.54,
+      "distilled_accuracy": 0.35,
+      "absolute_delta": -0.19,
+      "retention": 0.648148,
+      "retention_percent": 64.81,
+      "threshold": 0.8,
+      "passes_threshold": false
+    }
+  },
+  "macro": {
+    "baseline_accuracy": 0.668333,
+    "distilled_accuracy": 0.4,
+    "absolute_delta": -0.268333,
+    "retention": 0.598504,
+    "retention_percent": 59.85,
+    "passes_threshold": false
+  },
+  "acceptance_rule": "Report every category and the macro average. A zero baseline is marked not assessable instead of being converted to an infinite percentage."
+}

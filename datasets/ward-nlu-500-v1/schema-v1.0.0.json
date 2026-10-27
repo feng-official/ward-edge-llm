@@ -1,0 +1,144 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "SmartWardNLUSample",
+  "type": "object",
+  "required": [
+    "id",
+    "event_type",
+    "description",
+    "context",
+    "labels",
+    "source",
+    "split"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^nlu-[0-9]{4}$"
+    },
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "fall_suspected",
+        "seizure",
+        "fall_prediction",
+        "nurse_call",
+        "bed_leave",
+        "abnormal_posture",
+        "long_still",
+        "night_wandering",
+        "door_departure",
+        "bedsore_risk",
+        "environment_anomaly",
+        "device_fault",
+        "node_offline"
+      ]
+    },
+    "description": {
+      "type": "string",
+      "minLength": 10
+    },
+    "context": {
+      "type": "object",
+      "required": [
+        "ward",
+        "bed",
+        "confidence",
+        "occurred_at",
+        "network_state",
+        "rule_hits",
+        "details",
+        "scenario_family"
+      ],
+      "properties": {
+        "ward": {
+          "type": "string"
+        },
+        "bed": {
+          "type": "string"
+        },
+        "node_id": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "occurred_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "network_state": {
+          "enum": [
+            "connected",
+            "degraded",
+            "disconnected"
+          ]
+        },
+        "rule_hits": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "details": {
+          "type": "object"
+        },
+        "scenario_family": {
+          "type": "string"
+        }
+      }
+    },
+    "labels": {
+      "type": "object",
+      "required": [
+        "priority",
+        "urgency",
+        "advice",
+        "judgment"
+      ],
+      "properties": {
+        "priority": {
+          "enum": [
+            "P1",
+            "P2",
+            "P3"
+          ]
+        },
+        "urgency": {
+          "enum": [
+            "紧急",
+            "警告",
+            "提醒"
+          ]
+        },
+        "advice": {
+          "type": "string",
+          "minLength": 8
+        },
+        "judgment": {
+          "enum": [
+            "confirm",
+            "reject",
+            "escalate"
+          ]
+        }
+      }
+    },
+    "source": {
+      "enum": [
+        "manual",
+        "real_event",
+        "diffusion"
+      ]
+    },
+    "split": {
+      "enum": [
+        "train",
+        "test"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

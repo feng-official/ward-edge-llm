@@ -1,0 +1,14 @@
+{
+  "source": "general-v4-q6-full.samples.jsonl",
+  "source_sha256": "393ed49d4b8a6b1b4d9ea2cd25241a717a0dcec0c58a7e217dbe449a10f1ff9b",
+  "raw_rows": 739,
+  "unique_question_ids": 600,
+  "superseded_rows": 139,
+  "rule": "Keep last record per id, identical to evaluate_general_retention.run_command previous[id] assignment.",
+  "output": "general-v4-q6-final600.samples.jsonl",
+  "accuracy": {
+    "bbh": 0.35,
+    "cruxeval_o": 0.25,
+    "gsm8k": 0.6
+  }
+}

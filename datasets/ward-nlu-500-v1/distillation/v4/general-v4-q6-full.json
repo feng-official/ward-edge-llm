@@ -1,0 +1,135 @@
+{
+  "suite": "general-retention-v1",
+  "scorer_version": "symmetric-semantic-extractor-v2",
+  "created_at": "2026-08-22T06:49:36Z",
+  "model_label": "v4-q6-full",
+  "model": "qwen2.5-1.5b-ward-v4-q6",
+  "served_models": [
+    "qwen2.5-1.5b-ward-v4-q6"
+  ],
+  "endpoint": "http://127.0.0.1:8000/v1",
+  "benchmark": "datasets/ward-nlu-500-v1/distillation/general-retention-v1/benchmark.jsonl",
+  "benchmark_sha256": "890538935892216320d02e461c8c3c6ea65787c77fff16e3eccdb760e2b57e71",
+  "settings": {
+    "temperature": 0,
+    "seed": 20260818,
+    "max_tokens": 512,
+    "workers": 12,
+    "limit_per_task": 0
+  },
+  "samples": 600,
+  "macro_accuracy": 0.4,
+  "task_metrics": {
+    "gsm8k": {
+      "description": "数学多步推理（GSM8K）",
+      "samples": 200,
+      "correct": 120,
+      "metric_used_for_retention": "semantic_accuracy_relaxed_symmetric_extractor",
+      "accuracy": 0.6,
+      "semantic_accuracy": 0.6,
+      "accuracy_95ci_wilson": [
+        0.530837,
+        0.665394
+      ],
+      "strict_accuracy": 0.58,
+      "format_valid_rate": 0.955,
+      "relaxed_parse_rate": 1.0,
+      "conditional_accuracy_among_strict_valid": 0.60733,
+      "conditional_accuracy_among_relaxed_parsed": 0.6,
+      "request_errors": 0,
+      "mean_latency_seconds": 1.051089
+    },
+    "cruxeval_o": {
+      "description": "代码理解与执行推理（CRUXEval-O）",
+      "samples": 200,
+      "correct": 50,
+      "metric_used_for_retention": "semantic_accuracy_relaxed_symmetric_extractor",
+      "accuracy": 0.25,
+      "semantic_accuracy": 0.25,
+      "accuracy_95ci_wilson": [
+        0.195082,
+        0.314341
+      ],
+      "strict_accuracy": 0.275,
+      "format_valid_rate": 0.975,
+      "relaxed_parse_rate": 0.985,
+      "conditional_accuracy_among_strict_valid": 0.282051,
+      "conditional_accuracy_among_relaxed_parsed": 0.253807,
+      "request_errors": 0,
+      "mean_latency_seconds": 0.381583
+    },
+    "bbh": {
+      "description": "自然语言与逻辑推理（BIG-Bench Hard）",
+      "samples": 200,
+      "correct": 70,
+      "metric_used_for_retention": "semantic_accuracy_relaxed_symmetric_extractor",
+      "accuracy": 0.35,
+      "semantic_accuracy": 0.35,
+      "accuracy_95ci_wilson": [
+        0.287288,
+        0.418365
+      ],
+      "strict_accuracy": 0.235,
+      "format_valid_rate": 0.805,
+      "relaxed_parse_rate": 1.0,
+      "conditional_accuracy_among_strict_valid": 0.291925,
+      "conditional_accuracy_among_relaxed_parsed": 0.35,
+      "request_errors": 0,
+      "mean_latency_seconds": 0.136552,
+      "subtask_metrics": {
+        "boolean_expressions": {
+          "samples": 14,
+          "correct": 8,
+          "accuracy": 0.571429
+        },
+        "causal_judgement": {
+          "samples": 21,
+          "correct": 9,
+          "accuracy": 0.428571
+        },
+        "date_understanding": {
+          "samples": 27,
+          "correct": 11,
+          "accuracy": 0.407407
+        },
+        "disambiguation_qa": {
+          "samples": 21,
+          "correct": 10,
+          "accuracy": 0.47619
+        },
+        "logical_deduction_three_objects": {
+          "samples": 13,
+          "correct": 6,
+          "accuracy": 0.461538
+        },
+        "navigate": {
+          "samples": 24,
+          "correct": 13,
+          "accuracy": 0.541667
+        },
+        "sports_understanding": {
+          "samples": 24,
+          "correct": 0,
+          "accuracy": 0.0
+        },
+        "temporal_sequences": {
+          "samples": 29,
+          "correct": 8,
+          "accuracy": 0.275862
+        },
+        "web_of_lies": {
+          "samples": 27,
+          "correct": 5,
+          "accuracy": 0.185185
+        }
+      }
+    }
+  },
+  "raw_samples": "datasets/ward-nlu-500-v1/distillation/v4/general-v4-q6-full.samples.jsonl",
+  "notes": [
+    "CRUXEval-O is code reasoning; model-generated code is not executed.",
+    "This report is independent of the ward-specific template evaluation.",
+    "Retention uses semantic_accuracy from the same relaxed extractor for both models.",
+    "Conditional accuracy among parseable samples is diagnostic only and is selection-biased."
+  ]
+}

@@ -1,0 +1,476 @@
+{
+  "package": "ward-edge-llm",
+  "prepared_date": "2026-10-27",
+  "weight_included": false,
+  "files": [
+    {
+      "path": ".env.example",
+      "size_bytes": 292,
+      "sha256": "7548e3fbf76b5f170aba9e576d3d036f9076aabf9c1b508bc1a387b292803d85"
+    },
+    {
+      "path": ".gitattributes",
+      "size_bytes": 133,
+      "sha256": "5496bf7f6d75eb2e9e4f221030d04c9c46b9b31be1d836c195236297b4273ad7"
+    },
+    {
+      "path": ".github/workflows/offline-check.yml",
+      "size_bytes": 380,
+      "sha256": "cbe9cbe4af2ba333fe28479c902eb97fee9fefa03d46a3eb7528019791c1782f"
+    },
+    {
+      "path": ".gitignore",
+      "size_bytes": 218,
+      "sha256": "62c32e68f80caae2abb160390cda2d2f69a9f150d109ff5915d3e388c0e56d7f"
+    },
+    {
+      "path": "contracts/envelope.json",
+      "size_bytes": 1407,
+      "sha256": "d92dcd749503f2f07548241866ac0e2279c126beb1da23b2fe6b9f034e9c8c50"
+    },
+    {
+      "path": "contracts/inference_request.json",
+      "size_bytes": 2607,
+      "sha256": "2f2d2e1c78b4a8579d4824dcce728ae7ef154b491d94b476fb70004f2d01efd5"
+    },
+    {
+      "path": "contracts/inference_response.json",
+      "size_bytes": 1984,
+      "sha256": "84c692cb5bb66de991fdf469f7f3eaa7ce6e4aae7338eac12129642804af7c45"
+    },
+    {
+      "path": "contracts/safety_event.json",
+      "size_bytes": 3462,
+      "sha256": "87613dffd3f76fe894aad3adf65a88e95318c727b639b16018665f5f833bfdf5"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/CHANGELOG.md",
+      "size_bytes": 466,
+      "sha256": "46a03bde57c081f349c481d6aba53d4276899a6e4a35b7637ac01c644c5cbd9c"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/distillation/general-retention-v1/benchmark.manifest.json",
+      "size_bytes": 1242,
+      "sha256": "ccd10da124940c07f7bd77314565dbbba5f20a50ae62412e1f2b27ea3e751363"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/distillation/general-retention-v1/general-baseline-1.5b-full-v2-normalized.json",
+      "size_bytes": 4534,
+      "sha256": "312c9f49dea73666f6867449545994add8aaa5e995a1695b7aa034a0b3838f89"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/distillation/student-train-v2.jsonl",
+      "size_bytes": 4074326,
+      "sha256": "80f6f0ac657732b53d0d4d4babd8ae3ce9b64a427943ca3643ea98d9a3d22446"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/distillation/teacher-train-v1.jsonl",
+      "size_bytes": 3090187,
+      "sha256": "eea739ae3392b35b948fc48f144db29112718f1f9fbf09a06b367bab49775437"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/distillation/teacher-train-v1.report.json",
+      "size_bytes": 121,
+      "sha256": "eec05a4110b426033115c8127a2f783a0f85b239f4a9d5fa86ab8a547249783e"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/distillation/v4/combination_manifest.json",
+      "size_bytes": 324,
+      "sha256": "9db20ff70fbd617cb260e7c48ee88cb2303af8769874e7aa0fe9979e058cfff4"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/distillation/v4/domain-combo-a050-full.json",
+      "size_bytes": 106131,
+      "sha256": "a2c03dbac192f463e4f516d700b32bbe8f9a1949a5d55ffd479d0964e494a36c"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/distillation/v4/domain-v4-q6-full.json",
+      "size_bytes": 106043,
+      "sha256": "32857a13f64859367d35a1b90d3dc8dd946f93f063587ee6755aac7ce3454727"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/distillation/v4/general-combo-a050-full.json",
+      "size_bytes": 4224,
+      "sha256": "23d78e2a03d866b5f8484ab0f6dbc89a1210105762eb4cda50527fdc03c9801a"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/distillation/v4/general-combo-a050-full.samples.jsonl",
+      "size_bytes": 468569,
+      "sha256": "f9e6595bb6fe2934ac2f5858822cfd8eb845307a252fae13abe312499740326a"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/distillation/v4/general-comparison-v4-q6-vs-teacher14b.json",
+      "size_bytes": 1667,
+      "sha256": "0bb994c066fe887766995b10d594fab4980fe1536790f57d407ba2d09c238973"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/distillation/v4/general-comparison-v4-q6-vs-teacher14b.md",
+      "size_bytes": 763,
+      "sha256": "2d8dfbebc1a2765823583dda66706a213fe4d06dc0358af3f026afeb875fc588"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/distillation/v4/general-teacher-14b-full.json",
+      "size_bytes": 4147,
+      "sha256": "a3a46ded4f22a4a5caf3b4e9c83ecd36475fe0ab63bcaac00d8a3224b87ee647"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/distillation/v4/general-teacher-14b-full.samples.jsonl",
+      "size_bytes": 980782,
+      "sha256": "673160c3722ad59197f9b15b67d60b16c1d0312b32936d7faff37a1d1a4d1396"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/distillation/v4/general-v4-q6-full.json",
+      "size_bytes": 4151,
+      "sha256": "5df8140085fc8cfe0d27da23aef3ece1cb1b42aaaaa6fd48b6e22c9682d175f8"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/distillation/v4/general-v4-q6-full.samples.jsonl",
+      "size_bytes": 601769,
+      "sha256": "393ed49d4b8a6b1b4d9ea2cd25241a717a0dcec0c58a7e217dbe449a10f1ff9b"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/distillation/v4/manifest-v4.1.0.json",
+      "size_bytes": 1479,
+      "sha256": "d307094961dfd3201928ce2a4c1079fa77e55acbb2db01ae5f94763f0ad0e89c"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/distillation/v4/mixed-train-v4.1.0.jsonl",
+      "size_bytes": 5071577,
+      "sha256": "c45d43ac069e11a4dd40a33ff75a6fd9e00858889cb3fd7733e79956c3f04872"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/evaluation/ward-task-50-v1/manifest.json",
+      "size_bytes": 1041,
+      "sha256": "3d29120d3ff6d6cf0c3c634faa12b383e487b62655bd7f87675351dbf86cf786"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/evaluation/ward-task-50-v1/REPORT.md",
+      "size_bytes": 4590,
+      "sha256": "cd45dc76d870dd45c16e40b8d5bf1b09da44cef0928c1685b854f71698b04f22"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/evaluation/ward-task-50-v1/results-v4-q6.json",
+      "size_bytes": 26065,
+      "sha256": "2c2bdaf677566b12e0011f010f74a96348448f18e4a77599d516f1c6ae5e80c5"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/evaluation/ward-task-50-v1/ward-task-50-v1.jsonl",
+      "size_bytes": 43918,
+      "sha256": "18a526ab156153b50fcde74463d28f78150b3840545747ee5833c559d167187a"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/LABEL_SPEC.md",
+      "size_bytes": 2737,
+      "sha256": "5a6c3a48a04106eb8dd4094ddedfdac121830fa424c64cf71f5977837c2266df"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/manifest.json",
+      "size_bytes": 700,
+      "sha256": "9874e2e5768eb84993c443752afba0334ddcbef73049ae8b3fa165e2367e9830"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/nlu-dataset-v1.0.0.json",
+      "size_bytes": 541837,
+      "sha256": "7858ac2ba0ea5e6530eb771e324ff57eee5801c94c1424cf8ad8bb002471f4b1"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/nlu-dataset-v1.0.0.jsonl",
+      "size_bytes": 429442,
+      "sha256": "c15bcfee2aca53daa439e07445cd54971ac249d7c2d8a415774a0ff3021b31c4"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/project-inference-test-v1.0.0.jsonl",
+      "size_bytes": 144911,
+      "sha256": "cbbfeeef02f4a5038886a14d82a6812ffa6e1f2744b84763f78d502e74bde691"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/qwen-sft-test-v1.0.0.jsonl",
+      "size_bytes": 191020,
+      "sha256": "3d7f1d3f0b86918bbee6ac8cfa4ae321cc6b7dd889181254f9fef609e3c332fb"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/qwen-sft-train-v1.0.0.jsonl",
+      "size_bytes": 762994,
+      "sha256": "e18ced6721ac63c50692a1fe97b36e0dd5cd0454b6b32a167d3defd24cf797b5"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/README.md",
+      "size_bytes": 1868,
+      "sha256": "3547097aeb4a2a93c40c2af1ab79a8f820d2774bc4cbd8ceaf199d4c939d056a"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/schema-v1.0.0.json",
+      "size_bytes": 2854,
+      "sha256": "4ac37a6d012695b9c65d7e8098cc3f95b67e59391b4cb7c9cb57c32e4ac9f702"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/test-v1.0.0.jsonl",
+      "size_bytes": 85747,
+      "sha256": "70c47df081eba03a64ed95981b7be5b15e58e9c8afdc699a8f14e160dee00d5b"
+    },
+    {
+      "path": "datasets/ward-nlu-500-v1/train-v1.0.0.jsonl",
+      "size_bytes": 343695,
+      "sha256": "5f05bc345bb5a9044d4c1cfe94cd2f4176f16f642d348fc2c20f8aadfc863ac0"
+    },
+    {
+      "path": "docs/20-NLU数据集构建说明-P5.md",
+      "size_bytes": 3689,
+      "sha256": "cf51aef7bf993ac6e8a793b31d2a03dbca6c3826cc0b35d52d639e0bbda7b1ad"
+    },
+    {
+      "path": "docs/EVALUATION.md",
+      "size_bytes": 4913,
+      "sha256": "9de8af9922d9d496e8f8810f7caeb7f1f75f6c5d97e9618536799fe3a43e7df2"
+    },
+    {
+      "path": "docs/figures/实-17_蒸馏前后病房任务能力对比.png",
+      "size_bytes": 206752,
+      "sha256": "07a2f9ba2b9c0505be14e0d741d5513af7b7250c6cffb9398ec086b0494e0d2d"
+    },
+    {
+      "path": "docs/figures/实-18_通用能力保持评测.png",
+      "size_bytes": 272896,
+      "sha256": "455639ac30c3a2ee7db4a360182365775086bf831e03a3fe6342e4ed894cca79"
+    },
+    {
+      "path": "docs/figures/实-19_LoRA微调训练过程.png",
+      "size_bytes": 517502,
+      "sha256": "5bc21f0c35de59fc754cf75235115417a4dd0fd624b6d70f4a5925c93a9ad652"
+    },
+    {
+      "path": "docs/figures/实-20_病房NLU数据集样例与防泄漏检查.png",
+      "size_bytes": 439148,
+      "sha256": "e23ca7c8eb907cf9705fb5b5fd6616012a338d83bce0c1bb8132f680527eda55"
+    },
+    {
+      "path": "docs/figures/实-21_平均端到端请求延迟对比_非TTFT.png",
+      "size_bytes": 199243,
+      "sha256": "5bbe68eed8e0f207d5842554a69e8b53f9a142f378faa81b8186a2b6ea6515cc"
+    },
+    {
+      "path": "docs/GITHUB_UPLOAD.md",
+      "size_bytes": 2294,
+      "sha256": "630dd82b8da919b8f782bc24d6bf6db9fba3de71fb3bd3f2e5ac2c5202dc15b6"
+    },
+    {
+      "path": "docs/HISTORICAL_FIGURES.md",
+      "size_bytes": 5950,
+      "sha256": "3cc52d0de41870b0a00d512fe363c449ea543daf2ca82ab017fc9c64a14113a1"
+    },
+    {
+      "path": "docs/INPUT_FORMAT.md",
+      "size_bytes": 3207,
+      "sha256": "4d1a09058f4921af09d6fa604ef339f8bd376cda591904062cb7756216198309"
+    },
+    {
+      "path": "docs/MODEL_USAGE.md",
+      "size_bytes": 17455,
+      "sha256": "b4d04bf8e6ad48dfaf05b8510a2c9dde03e179e97eb71e1ffeb44cc244e10e7a"
+    },
+    {
+      "path": "docs/TRAINING.md",
+      "size_bytes": 3519,
+      "sha256": "5fdb12b5317aee6a758425b215cdc969e7e39d6c70930ae03a3df939a1155d4c"
+    },
+    {
+      "path": "edge-agent/distillation/api_config.py",
+      "size_bytes": 346,
+      "sha256": "4fcae3dcf8ebf3acb777dffac351174fdae22d47e8a7fd6ca0dd962be127ee33"
+    },
+    {
+      "path": "edge-agent/distillation/audit_domain_content_v2.py",
+      "size_bytes": 11886,
+      "sha256": "e4a34876a228099a6e7ddea700ec5a083a70fed4c07e2cf81278b2126ac26f73"
+    },
+    {
+      "path": "edge-agent/distillation/build_mixed_v4.py",
+      "size_bytes": 7407,
+      "sha256": "1afdda85558a213d7d23f5c775ba4084af0632b97bd8928e5740b21a51daf9a3"
+    },
+    {
+      "path": "edge-agent/distillation/build_ward50_eval.py",
+      "size_bytes": 13159,
+      "sha256": "2f92dab8cabf2ae25817d38f382b95aeebc62efd171cc5dc03859ceaa99093af"
+    },
+    {
+      "path": "edge-agent/distillation/combine_lora_adapters.py",
+      "size_bytes": 3712,
+      "sha256": "8db685f08530b46d57405a4a14897687a5c7c742912fd85c95cc71e08c79f812"
+    },
+    {
+      "path": "edge-agent/distillation/evaluate_general_retention.py",
+      "size_bytes": 32231,
+      "sha256": "8633665bbe1338a034ead0698e469ee6f9a3bcd6c8390347829bd4167a129840"
+    },
+    {
+      "path": "edge-agent/distillation/evaluate_model.py",
+      "size_bytes": 5736,
+      "sha256": "7a9463ee3e381a759ee13ff64a0971540d9915a69b8dc994467b3d0b4f062b7e"
+    },
+    {
+      "path": "edge-agent/distillation/generate_teacher_data.py",
+      "size_bytes": 13595,
+      "sha256": "56715f24760b10d120b311854ecd912ce8bbc2870494af75837a1ac4a9ee514b"
+    },
+    {
+      "path": "edge-agent/distillation/merge_lora.py",
+      "size_bytes": 1326,
+      "sha256": "7ef62a8d1cf058c7eebc290f7c718f9d1a22f418e0b7d6d96360b11286a461eb"
+    },
+    {
+      "path": "edge-agent/distillation/prepare_student_data.py",
+      "size_bytes": 1895,
+      "sha256": "c6b5c51a47fd372dde156e6ed0d61a9b6a5ea5f1232567c51730adeb0a0f0297"
+    },
+    {
+      "path": "edge-agent/distillation/README.md",
+      "size_bytes": 1338,
+      "sha256": "e118748a258da4d172c63cf44bd7f158034fa51230906b9ddbbe73aad62761e0"
+    },
+    {
+      "path": "edge-agent/distillation/rescore_general_retention_v2.py",
+      "size_bytes": 13428,
+      "sha256": "7f78e157b2206ce5d2d640a3022e36d84c7f7646dc016964b94d75d24223d47c"
+    },
+    {
+      "path": "edge-agent/distillation/smoke_tasks.py",
+      "size_bytes": 5106,
+      "sha256": "f0d3375ff2468f2d9cc51cc38bd81b0d50223f8d86733c35d70e32777c5e5606"
+    },
+    {
+      "path": "edge-agent/distillation/train_lora.py",
+      "size_bytes": 7490,
+      "sha256": "6b0e8f2edbbce2be319c6575727df60ccfa9545a3fe627f3ac892528435d3f53"
+    },
+    {
+      "path": "examples/activity.txt",
+      "size_bytes": 72,
+      "sha256": "591391e5dbede9dc1aafb3109d55af45bf15458ad5c7b8f549f0c041d364a6bc"
+    },
+    {
+      "path": "examples/event.json",
+      "size_bytes": 474,
+      "sha256": "cd3f7991a4b3e27b21be6b129affed647cbc0f8ba29fda2a5b0aa437500c8275"
+    },
+    {
+      "path": "examples/periodic-events.txt",
+      "size_bytes": 138,
+      "sha256": "a09d4b69bf91fcdedf500cb496701b0dddc9b5e8fd790de004408c3ea1e1c034"
+    },
+    {
+      "path": "examples/yolo-log.txt",
+      "size_bytes": 120,
+      "sha256": "41ef7d7bff1908c90fde7f01ca1bf9b52748d56f1f191f728e4786beabdcf532"
+    },
+    {
+      "path": "models/model-manifest.json",
+      "size_bytes": 609,
+      "sha256": "93b123c0d4a0b778d380b2814e037cf64aebf52ca54b68fcc0132021e93ddbc7"
+    },
+    {
+      "path": "models/README.md",
+      "size_bytes": 1036,
+      "sha256": "50658542d55b235f701c095747c4274a7486c09a60aa34ef3a190fd3fb9a2d5a"
+    },
+    {
+      "path": "README.md",
+      "size_bytes": 6225,
+      "sha256": "9f1d3cb417137aee1d109ee2f860157a4c9413cd76e56180bd42a73f099dc317"
+    },
+    {
+      "path": "reports/figure-data.json",
+      "size_bytes": 3736,
+      "sha256": "0d549c6d75910fc979eb88ceb12c1473b4a91aa362d8a35fecfd02ff6273cac2"
+    },
+    {
+      "path": "reports/general-samples/general-v4-q6-final600.samples.jsonl",
+      "size_bytes": 479884,
+      "sha256": "434db73eb77996ea114ebf2cef77e16ee4d064fb2f628824e68263d6b9471fa4"
+    },
+    {
+      "path": "reports/general-samples/samples-audit.json",
+      "size_bytes": 473,
+      "sha256": "c2e34b61a3a6a876103781a3fe3a5f2adf8a495fa85f7d04d65d20250bec9dfa"
+    },
+    {
+      "path": "reports/historical-general-comparison.json",
+      "size_bytes": 1706,
+      "sha256": "3588153e78c9e7f39c18350d08bf038a0c1bbfc2a5c61dc353f2948d1660086f"
+    },
+    {
+      "path": "reports/historical-general-comparison.md",
+      "size_bytes": 777,
+      "sha256": "83d9ac70f8d06175ed072cae26ec8d5b8ef227fe6e123577fe4c3719d4db8e4f"
+    },
+    {
+      "path": "reports/packaging-check.json",
+      "size_bytes": 591,
+      "sha256": "054df43ea9367f236eebd89020ca23d72c9702965ae8f4074468d2de110f3913"
+    },
+    {
+      "path": "reports/training-v4/adapter_config.json",
+      "size_bytes": 1183,
+      "sha256": "8954536c9b41fbe7f99e6d5afaa6a8007441cbeba04fd0b1399b5f1563704b5a"
+    },
+    {
+      "path": "reports/training-v4/training_log.jsonl",
+      "size_bytes": 52458,
+      "sha256": "e1e08ab5e4f0c851d6ae67e02bf362b820d19a3075af9fa4732673126d5e7092"
+    },
+    {
+      "path": "reports/training-v4/training_summary.json",
+      "size_bytes": 374,
+      "sha256": "bbf9cae8fe9223a4d366970ee1ffec22e696927038208069205294f209336bea"
+    },
+    {
+      "path": "requirements-train.txt",
+      "size_bytes": 214,
+      "sha256": "85f4cfa0b21c8849894d1bfd533d2022b9a28e47521e5483b4b9dc16adf16d7f"
+    },
+    {
+      "path": "requirements.txt",
+      "size_bytes": 91,
+      "sha256": "d5885dee45e208a6daf4d7cf19ea5ea4a69eae8da9e881df84cad5ec7246965b"
+    },
+    {
+      "path": "scripts/audit_saved_samples.py",
+      "size_bytes": 1968,
+      "sha256": "abc8d51ba485e58b7822b7ecfdb816d1b0d1b397906b6b63f7cc0f0f73e5d27c"
+    },
+    {
+      "path": "scripts/generate_ward_nlu_dataset.py",
+      "size_bytes": 40691,
+      "sha256": "6017956e31066d95045fa36eea52ef8779b6577b798edd4d2598c80026a1d5e1"
+    },
+    {
+      "path": "scripts/start_model.py",
+      "size_bytes": 2701,
+      "sha256": "e1266aeb7c8f0143d5925096e005df1790c34365c7980a003a1df3db09db895b"
+    },
+    {
+      "path": "scripts/verify_repository.py",
+      "size_bytes": 11977,
+      "sha256": "5c66d695fa63e01bf5174c89c278b1830aad9c99a2c29d1c505ee62744768516"
+    },
+    {
+      "path": "scripts/ward_cli.py",
+      "size_bytes": 6998,
+      "sha256": "427c59ef1fe346e10fb849eb536c7f00f2b3f9409445ac1ae65c7737c8e9bbd0"
+    },
+    {
+      "path": "tests/test_portable_runtime.py",
+      "size_bytes": 2832,
+      "sha256": "376627b5f4186d9f8854f27ff364e6d08b93ca80a585621fe99695030887d9b0"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "size_bytes": 1565,
+      "sha256": "9cfd44e1e7c1268115bad8db26bfdc9348f45f4c6b37a87774de544ea896419f"
+    }
+  ],
+  "excluded_from_manifest": [
+    "reports/local-validation.json",
+    "reports/package-manifest.json"
+  ]
+}

@@ -1,0 +1,122 @@
+{
+  "实-17": {
+    "dataset": "200 prompts / 100 events",
+    "metrics_percent": {
+      "original_1.5b": {
+        "judgment_accuracy": 48.0,
+        "macro_f1": 21.62,
+        "urgency_accuracy": null,
+        "strict_format": 0.0
+      },
+      "student_v4_q6": {
+        "judgment_accuracy": 99.0,
+        "macro_f1": 99.14,
+        "urgency_accuracy": 82.0,
+        "strict_format": 100.0
+      },
+      "teacher_14b": {
+        "judgment_accuracy": 90.0,
+        "macro_f1": 89.65,
+        "urgency_accuracy": 51.0,
+        "strict_format": 0.0
+      }
+    },
+    "reference_similarity": {
+      "original_1.5b": 0.094,
+      "student_v4_q6": 0.467,
+      "teacher_14b": 0.12
+    }
+  },
+  "实-18": {
+    "samples_per_task": 200,
+    "benchmark_sha256": "890538935892216320d02e461c8c3c6ea65787c77fff16e3eccdb760e2b57e71",
+    "accuracy_percent": {
+      "gsm8k": {
+        "original_1.5b": 69.0,
+        "student_v4_q6": 60.0,
+        "retention": 86.9565
+      },
+      "cruxeval_o": {
+        "original_1.5b": 26.0,
+        "student_v4_q6": 25.0,
+        "retention": 96.1538
+      },
+      "bbh": {
+        "original_1.5b": 31.0,
+        "student_v4_q6": 35.0,
+        "retention": 112.9032
+      },
+      "macro": {
+        "original_1.5b": 42.0,
+        "student_v4_q6": 40.0,
+        "retention": 95.2381
+      }
+    }
+  },
+  "实-21": {
+    "metric": "mean_end_to_end_request_latency_seconds_not_ttft",
+    "teacher_14b": 0.993486,
+    "student_v4_q6": 0.421774,
+    "historical_v2_q4_k_m": 0.156,
+    "reduction_vs_teacher_percent": {
+      "student_v4_q6": 57.55,
+      "historical_v2_q4_k_m": 84.3
+    }
+  },
+  "实-19": {
+    "base_model": "/root/autodl-tmp/qwen/models/Qwen2.5-1.5B-Instruct",
+    "dataset": "datasets/ward-nlu-500-v1/distillation/v4/mixed-train-v4.1.0.jsonl",
+    "samples": 5000,
+    "epochs": 1,
+    "optimizer_updates": 313,
+    "elapsed_seconds": 683.4,
+    "max_gpu_memory_gb": 6.829,
+    "method": "offline teacher-response distillation with BF16 LoRA",
+    "resumed_from_adapter": null
+  },
+  "实-20": {
+    "version": "ward-mixed-v4.0.0",
+    "seed": 20260822,
+    "rows": 5000,
+    "counts": {
+      "ward": 2000,
+      "math_gsm8k_train": 1500,
+      "code_mbpp_output": 1500
+    },
+    "task_counts": {
+      "code_output_replay": 1500,
+      "yolo_log_summary": 49,
+      "gsm8k_replay": 1500,
+      "event_enhancement": 511,
+      "nursing_advice": 240,
+      "cloud_judgment": 635,
+      "activity_broadcast": 254,
+      "periodic_summary": 57,
+      "offline_decision": 254
+    },
+    "sources": {
+      "ward": {
+        "path": "datasets/ward-nlu-500-v1/distillation/student-train-v2.jsonl",
+        "sha256": "80f6f0ac657732b53d0d4d4babd8ae3ce9b64a427943ca3643ea98d9a3d22446"
+      },
+      "gsm8k_train": {
+        "path": "datasets/ward-nlu-500-v1/distillation/v4-sources/gsm8k-train.jsonl",
+        "sha256": "17f347dc51477c50d4efb83959dbb7c56297aba886e5544ee2aaed3024813465"
+      },
+      "mbpp": {
+        "path": "datasets/ward-nlu-500-v1/distillation/v4-sources/mbpp.jsonl",
+        "sha256": "ccf64ceae9c5403bf50a044cb6d505bfd2a2963ee58338ba268fd65beab92a9f"
+      },
+      "held_out_benchmark": {
+        "path": "datasets/ward-nlu-500-v1/distillation/general-retention-v1/benchmark.jsonl",
+        "sha256": "890538935892216320d02e461c8c3c6ea65787c77fff16e3eccdb760e2b57e71"
+      }
+    },
+    "leakage_checks": {
+      "gsm8k_exact_question_overlap": 0,
+      "cruxeval_source_used_for_training": false,
+      "benchmark_rows_used_for_training": 0
+    },
+    "output_sha256": "c45d43ac069e11a4dd40a33ff75a6fd9e00858889cb3fd7733e79956c3f04872"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "model_id": "qwen2.5-1.5b-ward-v4-q6",
+  "base_model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "teacher_model": "Qwen2.5-14B-Instruct-AWQ",
+  "filename": "qwen2.5-1.5b-ward-v4-q6_k.gguf",
+  "quantization": "Q6_K",
+  "size_bytes": 1272739456,
+  "sha256": "f7ffc9751378a8f67bed3a6a8872f0f20c40b48cc4223b5560e225bd547ca8a0",
+  "download_url": null,
+  "weight_included": false,
+  "metadata_source": "Locally saved v4 model documentation; weight not rehashed during this offline packaging.",
+  "original_autodl_path": "/root/autodl-tmp/qwen/models/Qwen2.5-1.5B-Ward-Distilled-v4-GGUF/qwen2.5-1.5b-ward-v4-q6_k.gguf"
+}

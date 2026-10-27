@@ -1,0 +1,10 @@
+{
+  "method": "rank_concatenation",
+  "formula": "base + weight_a * delta_a + weight_b * delta_b",
+  "adapter_a": "/root/autodl-tmp/qwen/models/Qwen2.5-1.5B-Ward-LoRA-v2",
+  "adapter_b": "/root/autodl-tmp/qwen/models/Qwen2.5-1.5B-Ward-LoRA-v4-real",
+  "weight_a": 0.5,
+  "weight_b": 0.75,
+  "rank": 32,
+  "lora_alpha": 32
+}

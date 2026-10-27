@@ -1,0 +1,38 @@
+{
+  "suite": "general-retention-v1",
+  "created_at": "2026-08-18T12:45:43Z",
+  "seed": 20260818,
+  "per_task": 200,
+  "samples": 600,
+  "task_counts": {
+    "gsm8k": 200,
+    "cruxeval_o": 200,
+    "bbh": 200
+  },
+  "dataset_sha256": "890538935892216320d02e461c8c3c6ea65787c77fff16e3eccdb760e2b57e71",
+  "sources": {
+    "gsm8k": {
+      "url": "https://raw.githubusercontent.com/openai/grade-school-math/master/grade_school_math/data/test.jsonl",
+      "sha256": "3730d312f6e3440559ace48831e51066acaca737f6eabec99bccb9e4b3c39d14"
+    },
+    "cruxeval_o": {
+      "url": "https://raw.githubusercontent.com/facebookresearch/cruxeval/main/data/cruxeval.jsonl",
+      "sha256": "8368b81047dc5014e4caf5a2f97604eff7644e0ecd7415e3ceeb184bbc2e0c96"
+    },
+    "bbh": {
+      "url": "https://codeload.github.com/suzgunmirac/BIG-Bench-Hard/zip/refs/heads/main",
+      "sha256": "6df5df45684bf80f03713546a53c765e89796662e0bcf985ba36d70e047687a0",
+      "subtasks": [
+        "boolean_expressions",
+        "causal_judgement",
+        "date_understanding",
+        "disambiguation_qa",
+        "logical_deduction_three_objects",
+        "navigate",
+        "sports_understanding",
+        "temporal_sequences",
+        "web_of_lies"
+      ]
+    }
+  }
+}

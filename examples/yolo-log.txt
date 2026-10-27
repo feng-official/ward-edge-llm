@@ -1,0 +1,4 @@
+14:31:58 B01 lying conf=0.91
+14:31:59 B01 lying conf=0.92
+14:32:00 B01 sitting conf=0.89
+14:32:01 B01 sitting conf=0.90

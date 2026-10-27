@@ -1,0 +1,136 @@
+{
+  "suite": "general-retention-v2",
+  "scorer_version": "symmetric-semantic-extractor-v2",
+  "created_at": "2026-08-19T01:32:36Z",
+  "model_label": "baseline-1.5b",
+  "model": "qwen2.5-1.5b",
+  "benchmark_sha256": "890538935892216320d02e461c8c3c6ea65787c77fff16e3eccdb760e2b57e71",
+  "source_samples": "/root/autodl-tmp/smart-ward-master/datasets/ward-nlu-500-v1/distillation/general-retention-v1/general-baseline-1.5b-full.samples.jsonl",
+  "samples": 600,
+  "primary_metric": "macro_semantic_accuracy",
+  "macro_semantic_accuracy": 0.42,
+  "macro_strict_accuracy": 0.165,
+  "task_metrics": {
+    "gsm8k": {
+      "description": "数学多步推理（GSM8K）",
+      "samples": 200,
+      "primary_metric": "semantic_accuracy",
+      "semantic_correct": 138,
+      "semantic_accuracy": 0.69,
+      "semantic_accuracy_95ci_wilson": [
+        0.622828,
+        0.750011
+      ],
+      "relaxed_parse_rate": 1.0,
+      "strict_correct": 14,
+      "strict_accuracy": 0.07,
+      "strict_format_valid_rate": 0.125,
+      "conditional_accuracy_among_strict_valid": 0.56,
+      "conditional_accuracy_among_relaxed_parsed": 0.69,
+      "original_v1_accuracy": 0.07,
+      "original_v1_format_valid_rate": 0.125,
+      "format_penalty_recovered": 0.62,
+      "request_errors": 0,
+      "accuracy": 0.69
+    },
+    "cruxeval_o": {
+      "description": "代码理解与执行推理（CRUXEval-O）",
+      "samples": 200,
+      "primary_metric": "semantic_accuracy",
+      "semantic_correct": 52,
+      "semantic_accuracy": 0.26,
+      "semantic_accuracy_95ci_wilson": [
+        0.204138,
+        0.324907
+      ],
+      "relaxed_parse_rate": 1.0,
+      "strict_correct": 47,
+      "strict_accuracy": 0.235,
+      "strict_format_valid_rate": 0.615,
+      "conditional_accuracy_among_strict_valid": 0.382114,
+      "conditional_accuracy_among_relaxed_parsed": 0.26,
+      "original_v1_accuracy": 0.165,
+      "original_v1_format_valid_rate": 0.42,
+      "format_penalty_recovered": 0.095,
+      "request_errors": 0,
+      "accuracy": 0.26
+    },
+    "bbh": {
+      "description": "自然语言与逻辑推理（BIG-Bench Hard）",
+      "samples": 200,
+      "primary_metric": "semantic_accuracy",
+      "semantic_correct": 62,
+      "semantic_accuracy": 0.31,
+      "semantic_accuracy_95ci_wilson": [
+        0.249989,
+        0.377172
+      ],
+      "relaxed_parse_rate": 1.0,
+      "strict_correct": 38,
+      "strict_accuracy": 0.19,
+      "strict_format_valid_rate": 0.655,
+      "conditional_accuracy_among_strict_valid": 0.290076,
+      "conditional_accuracy_among_relaxed_parsed": 0.31,
+      "original_v1_accuracy": 0.19,
+      "original_v1_format_valid_rate": 0.655,
+      "format_penalty_recovered": 0.12,
+      "request_errors": 0,
+      "subtask_metrics": {
+        "boolean_expressions": {
+          "samples": 14,
+          "correct": 9,
+          "semantic_accuracy": 0.642857
+        },
+        "causal_judgement": {
+          "samples": 21,
+          "correct": 12,
+          "semantic_accuracy": 0.571429
+        },
+        "date_understanding": {
+          "samples": 27,
+          "correct": 9,
+          "semantic_accuracy": 0.333333
+        },
+        "disambiguation_qa": {
+          "samples": 21,
+          "correct": 7,
+          "semantic_accuracy": 0.333333
+        },
+        "logical_deduction_three_objects": {
+          "samples": 13,
+          "correct": 3,
+          "semantic_accuracy": 0.230769
+        },
+        "navigate": {
+          "samples": 24,
+          "correct": 14,
+          "semantic_accuracy": 0.583333
+        },
+        "sports_understanding": {
+          "samples": 24,
+          "correct": 4,
+          "semantic_accuracy": 0.166667
+        },
+        "temporal_sequences": {
+          "samples": 29,
+          "correct": 2,
+          "semantic_accuracy": 0.068966
+        },
+        "web_of_lies": {
+          "samples": 27,
+          "correct": 2,
+          "semantic_accuracy": 0.074074
+        }
+      },
+      "accuracy": 0.31
+    }
+  },
+  "raw_samples": "/root/autodl-tmp/smart-ward-master/datasets/ward-nlu-500-v1/distillation/general-retention-v1/general-baseline-1.5b-full-v2.samples.jsonl",
+  "methodology": [
+    "Both models are rescored from already saved outputs with the identical extractor.",
+    "Semantic accuracy uses relaxed task-specific extraction; strict FINAL compliance is separate.",
+    "Conditional accuracy among parsed samples is diagnostic and not used for retention.",
+    "CRUXEval model-generated code is never executed."
+  ],
+  "macro_accuracy": 0.42
+}

@@ -1,0 +1,93 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://smart-ward/contracts/safety_event.json",
+  "title": "SafetyEventPayload",
+  "description": "安全事件上报。主题: ward/{ward_id}/node/{node_id}/event",
+  "type": "object",
+  "required": [
+    "event_id", "ward_id", "node_id", "bed_id", "event_type", "priority",
+    "state", "occurred_at", "detected_at", "confidence", "model", "evidence_refs"
+  ],
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "format": "uuid",
+      "description": "事件唯一 ID（边缘端生成，UUID4）"
+    },
+    "ward_id": {"type": "string"},
+    "node_id": {"type": "string"},
+    "bed_id": {"type": "string"},
+    "event_type": {
+      "type": "string",
+      "enum": [
+        "fall_suspected", "nurse_call", "bed_leave",
+        "door_departure", "night_wandering", "environment_anomaly", "node_offline",
+        "fall_prediction", "long_still", "abnormal_posture", "seizure",
+        "bedsore_risk", "device_fault"
+      ],
+      "description": "事件类型，完整字典见 docs/00-事件字典.md"
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["P1", "P2", "P3"],
+      "description": "P1 紧急 / P2 高优先级 / P3 提醒"
+    },
+    "state": {
+      "type": "string",
+      "enum": ["new", "notified", "acknowledged", "resolved", "false_positive", "escalated"],
+      "description": "事件状态机当前态，边缘端首发固定为 new"
+    },
+    "occurred_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "事件发生时间 UTC ISO 8601"
+    },
+    "detected_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "边缘端检测到的时间（通常略晚于 occurred_at）"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "边缘端模型/规则融合给出的置信度"
+    },
+    "model": {
+      "type": "object",
+      "description": "产生此事件的模型信息（强制输出，对齐方案书 §3.3 验收）",
+      "required": ["model_name", "model_version", "inference_ms"],
+      "properties": {
+        "model_name": {"type": "string", "description": "如 yolo-nano-pose / rule-fusion-v1"},
+        "model_version": {"type": "string", "description": "语义化版本，如 1.0.0-int8"},
+        "inference_ms": {"type": "integer", "minimum": 0, "description": "推理耗时毫秒"}
+      },
+      "additionalProperties": false
+    },
+    "evidence_refs": {
+      "type": "array",
+      "description": "证据引用列表（脱敏截图/片段指针，原始视频留边缘端）",
+      "items": {
+        "type": "object",
+        "required": ["kind", "ref"],
+        "properties": {
+          "kind": {"type": "string", "enum": ["image", "clip", "sensor_dump", "pose_keypoints"]},
+          "ref": {"type": "string", "description": "边缘端本地路径或对象存储 key"},
+          "taken_at": {"type": "string", "format": "date-time"}
+        },
+        "additionalProperties": false
+      }
+    },
+    "rule_hits": {
+      "type": "array",
+      "description": "命中的规则列表（规则融合时填充）",
+      "items": {"type": "string"}
+    },
+    "details": {
+      "type": "object",
+      "description": "事件特有补充字段，如 fall_suspected 的姿态关键点、bed_leave 的离床秒数",
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

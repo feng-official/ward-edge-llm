@@ -1,0 +1,71 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://smart-ward/contracts/inference_request.json",
+  "title": "CloudInferenceRequest",
+  "description": "边缘 -> 云端推理请求消息（MQTT 主题 ward/{ward_id}/node/{node_id}/inference/request）。外层信封见 envelope.json；外层与 payload 均携带 event_id、trace_id，云端按 event_id 去重、按 trace_id 校验响应来源。",
+  "type": "object",
+  "allOf": [{ "$ref": "envelope.json" }],
+  "properties": {
+    "payload": {
+      "type": "object",
+      "required": ["event_id", "trace_id", "event_type"],
+      "properties": {
+        "event_id": {
+          "type": "string",
+          "description": "业务事件 ID（幂等键）；重复 request 不重复执行"
+        },
+        "trace_id": {
+          "type": "string",
+          "description": "跨服务追踪 ID，与信封外层一致，响应原样回传"
+        },
+        "request_mode": {
+          "type": "string",
+          "enum": ["cloud", "hybrid"],
+          "description": "路由模式：cloud=纯云端二次研判，hybrid=协同"
+        },
+        "timeout_ms": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "边缘侧等待响应的超时毫秒数"
+        },
+        "requested_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "边缘发起时间，UTC ISO 8601，Z 结尾"
+        },
+        "event_type": {
+          "type": "string",
+          "description": "事件类型（对齐 contracts/safety_event.json event_type 枚举）"
+        },
+        "priority": {
+          "type": "string",
+          "enum": ["P0", "P1", "P2", "P3"],
+          "description": "事件优先级"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "边缘侧置信度"
+        },
+        "ward_id": { "type": "string" },
+        "node_id": { "type": "string" },
+        "bed_id": { "type": "string" },
+        "model_name": {
+          "type": "string",
+          "description": "边缘侧模型名称（如 qwen2.5-1.5b-instruct-q4_k_m）"
+        },
+        "model_version": { "type": "string" },
+        "details": {
+          "type": "object",
+          "description": "事件详情（行为摘要/活动状态等），供云端语义增强"
+        },
+        "llm_prompt": {
+          "type": ["string", "null"],
+          "description": "边缘 LLM 预处理后的 prompt；为空时云端自行构造"
+        }
+      },
+      "additionalProperties": true
+    }
+  }
+}

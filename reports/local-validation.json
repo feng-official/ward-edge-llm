@@ -7,7 +7,7 @@
       "passed": true,
       "detail": {
         "python_files": 19,
-        "json_jsonl_files": 45,
+        "json_jsonl_files": 46,
         "errors": []
       }
     },
@@ -149,7 +149,7 @@
       "name": "package_manifest_hashes",
       "passed": true,
       "detail": {
-        "files": 93,
+        "files": 94,
         "mismatches": [],
         "inventory_difference": []
       }

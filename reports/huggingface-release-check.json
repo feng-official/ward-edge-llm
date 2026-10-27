@@ -1,0 +1,14 @@
+{
+  "checked_date": "2026-10-27",
+  "source": "https://huggingface.co/api/models/siwuxie27/Qwen2.5-1.5B-Ward-v4-Q6?blobs=true",
+  "repository": "siwuxie27/Qwen2.5-1.5B-Ward-v4-Q6",
+  "revision": "98e94417c3ced60a4b1197c6fba75ed7ba3fa9a6",
+  "private": false,
+  "gated": false,
+  "filename": "qwen2.5-1.5b-ward-v4-q6_k.gguf",
+  "size_bytes": 1272739456,
+  "lfs_sha256": "f7ffc9751378a8f67bed3a6a8872f0f20c40b48cc4223b5560e225bd547ca8a0",
+  "matches_historical_model_metadata": true,
+  "full_weight_downloaded": false,
+  "model_inference_rerun": false
+}

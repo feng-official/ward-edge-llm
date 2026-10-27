@@ -30,8 +30,8 @@ git push -u origin main
 
 若这些文件要放回原智慧病房仓库，请不要用本仓库根README覆盖整个原项目README；本包是为新建独立模型仓库整理的。
 
-## 后续发布权重
+## 模型权重已发布
 
-当前包不含权重，使用方需要另行取得最终GGUF。待从AutoDL取回文件后，通过模型托管页或Release附件发布，并更新 `models/model-manifest.json` 的 `download_url`。这一步不影响先上传代码和数据。
+最终GGUF已发布到 [Hugging Face](https://huggingface.co/siwuxie27/Qwen2.5-1.5B-Ward-v4-Q6)。GitHub保存代码、数据和文档，模型权重保存在Hugging Face。根README与 `models/README.md` 已补上下载方式，`models/model-manifest.json` 已填入固定版本URL，不需要再次把1.27GB权重上传到GitHub。
 
 `reports/package-manifest.json`为本次打包时的校验清单。以后修改仓库文件时，它会失效；可在项目根目录运行 `python scripts/verify_repository.py --refresh-manifest` 更新清单，再运行普通检查。

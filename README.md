@@ -7,7 +7,7 @@
 ## 当前交付状态
 
 - 代码、数据、历史结果可以在不启动原 AutoDL 服务器的情况下查看和上传。
-- **本仓库不包含 GGUF 权重和 LoRA 权重**，本地保存的是权重元数据。下载地址尚未发布；取得权重后才可进行真实推理。
+- **GitHub仓库不包含 GGUF 权重和 LoRA 权重**。最终GGUF已发布到 [Hugging Face模型仓库](https://huggingface.co/siwuxie27/Qwen2.5-1.5B-Ward-v4-Q6)，下载后即可按下文部署。
 - 原冻结 600 题 `benchmark.jsonl` 未保存在本地。本仓库包含准备脚本、历史 manifest、结果与样本级预测；重新准备题库后必须核对哈希，详见 [评测说明](docs/EVALUATION.md)。
 - 本次整理只进行了本地完整性和调用接口测试，没有重新运行模型推理或训练。
 
@@ -44,11 +44,19 @@ python scripts/ward_cli.py --task cloud_judgment --input examples/event.json --d
 
 ### 启动最终模型
 
-准备好适合本机的 `llama-server`，将最终权重放到：
+准备好适合本机的 `llama-server`，从 [Hugging Face](https://huggingface.co/siwuxie27/Qwen2.5-1.5B-Ward-v4-Q6) 下载最终权重，放到：
 
 ```text
 models/qwen2.5-1.5b-ward-v4-q6_k.gguf
 ```
+
+也可以在仓库根目录执行以下下载命令（约1.27GB，URL固定到已核对的模型版本）：
+
+```bash
+curl -L --fail "https://huggingface.co/siwuxie27/Qwen2.5-1.5B-Ward-v4-Q6/resolve/98e94417c3ced60a4b1197c6fba75ed7ba3fa9a6/qwen2.5-1.5b-ward-v4-q6_k.gguf" -o models/qwen2.5-1.5b-ward-v4-q6_k.gguf
+```
+
+Windows PowerShell若把 `curl` 识别成别名，请将命令开头换为 `curl.exe`。正确SHA-256为 `f7ffc9751378a8f67bed3a6a8872f0f20c40b48cc4223b5560e225bd547ca8a0`。
 
 然后执行（将第一处路径换成你的可执行文件）：
 
